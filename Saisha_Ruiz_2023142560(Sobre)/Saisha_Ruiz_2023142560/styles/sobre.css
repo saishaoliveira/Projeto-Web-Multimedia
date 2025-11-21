@@ -1,0 +1,57 @@
+/* Imagens do carrossel com tamanho fixo */
+.carousel-img-fixed {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+/* Efeito de saltar dos cards valores */
+.card.values-animate {
+  transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+}
+/* Efeito hover para cards de valores */
+.card.values-animate:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+/* Hero section custom background */
+.hero-section {
+  background: url("../img/usaroute66.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 420px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imghistoria {
+  display: block;
+  padding-bottom: 20px;
+
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(10deg);
+    }
+}
+
+.imghistoria:hover {
+   animation:rotate 3s ease-in-out infinite alternate;
+}
+
+.imghistoria:active {
+    animation-play-state: paused;
+}
