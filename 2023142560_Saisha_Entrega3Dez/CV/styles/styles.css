@@ -1,0 +1,113 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    margin: 40px;
+    padding: 50px;
+    background-color: #f0f4fb;
+}
+ 
+img {
+    height: 150px;
+    width:150px;
+    border: 4px solid #0074b8;
+    border-radius: 50%;
+}
+
+h1.nome {
+    align-items: left;
+}
+
+.a hoover {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.header {
+        display: flex;
+        align-items: center;
+        gap:25px;
+        background: #f0f4fb;
+        border-bottom: 4px solid #0074b8;
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+    }
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+    font-size: 1em;
+    color: #222;
+}
+
+.section-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #0074b8;
+    padding-bottom: 2px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.info-box {
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #f0f4fb;
+}
+
+/* =====================================================Media Queries para responsividade============================================== */
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 992px) {
+  footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .row {
+    flex-direction: column !important;
+    gap: 16px;
+  }
+  .col-md-3{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 16px;
+  }
+
+  footer ul li,footer p,footer h5 {
+    font-size: 14px !important;
+    text-align: left;
+  }
+
+  footer p {
+    font-size: 13px !important;
+  }
+}
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+  footer {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  footer ul li,
+  footer p,
+  footer h5 {
+    font-size: 12px !important;
+    text-align: left;
+  }
+  
+  footer p {
+    font-size: 11px !important;
+  }
+}

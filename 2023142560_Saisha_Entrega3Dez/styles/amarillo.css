@@ -1,0 +1,186 @@
+body h1, h2{
+  font-family: 'Cedros', sans-serif;
+  color: #c33;
+}
+body {
+  background: url('../img/bg_site.jpg') ;
+}
+
+.hero-section {
+  background:
+  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../img/amarillo.jpeg') center/cover no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 620px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -80px;
+}
+
+@font-face {
+  font-family: 'Cedros';
+  src: url('../fonts/Cedros.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.nav-link {
+  color: black !important;
+  font-weight: bold;
+}
+
+
+.titulo {
+  font-family:'Cedros', sans-serif;
+  background: linear-gradient(to right,rgb(229, 215, 59), rgb(249, 64, 64));
+  color: transparent;
+  background-clip: text;
+  display: inline-block;
+  font-size: 72px;
+  font-weight: bold;
+  
+}
+
+.subtitulo {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Efeito de saltar dos cards valores */
+.card.values-animate {
+  transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+}
+/* Efeito hover para cards de valores */
+.card.values-animate:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.container_historia h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.container_historia p {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+ h5 {
+  font-weight: bold;
+}
+.container_historia {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: rgb(248, 248, 248);
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.cards_container {
+display: flex;
+gap: 40px;
+justify-content: center;
+align-items: flex-start;
+}
+
+
+.card_atracoes {
+width: 520px;
+padding-top: 2px;
+}
+
+.card_atracoes h3 {
+font-size: 1.2rem;
+font-family: "Cedros", sans-serif;
+padding-top: 10px;
+font-weight: bold;
+}
+
+
+.card_atracoes img {
+width: 100%;
+height: 250px;
+border-radius: 4px;
+}
+
+.card_atracoes p {
+font-size: 1rem;
+color: #3a3a3a;
+line-height: 1.4;
+margin-bottom: 16px;
+}
+
+
+.learn-more {
+font-weight: bold;
+color: #c0392b;
+text-decoration: none;
+}
+
+
+.learn-more:hover {
+text-decoration: underline;
+}
+
+.img_atracoes {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.atracoes {
+  margin-top: 40px;
+  display: grid;
+  gap: 20px;
+}
+
+.atracoes {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Onde Ficar Cards */
+.hotel-card {
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  background: #fff;
+  margin-bottom: 0;
+  border: none;
+}
+.hotel-type {
+  background: #f1f3f6;
+  font-size: 0.92rem;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  font-weight: 500;
+  text-align:left;
+}
+.tag {
+  display: inline-block;
+  background: #f1f3f6;
+  color: #555;
+  font-size: 0.92rem;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.price-range {
+  color: #c33;
+  font-weight: bold;
+  font-size: 1.15rem;
+}

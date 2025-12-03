@@ -1,0 +1,82 @@
+body {
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  padding-top: 30px;
+}
+/* Navbar efeito vidro (transparente e desfoque) */
+.navbar-glass {
+  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Footer customizado */
+footer {
+  background: linear-gradient(90deg, #e77320 0%, #e17948 100%);
+  color: white;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* Para animação de hover em links do footer, use as classes Bootstrap: fw-bold e text-decoration-underline no :hover */
+footer a:hover,
+footer a:focus {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Linha horizontal branca no footer em cima do "Todos os direitos" */
+hr {
+  border-top: 2px solid white;
+}
+
+/* =====================================================Media Queries para responsividade============================================== */
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 992px) {
+  footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .row {
+    flex-direction: column !important;
+    gap: 16px;
+  }
+  .col-md-3{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 16px;
+  }
+
+  footer ul li,footer p,footer h5 {
+    font-size: 14px !important;
+    text-align: left;
+  }
+
+  footer p {
+    font-size: 13px !important;
+  }
+}
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 576px) {
+  footer {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  footer ul li,
+  footer p,
+  footer h5 {
+    font-size: 12px !important;
+    text-align: left;
+  }
+  
+  footer p {
+    font-size: 11px !important;
+  }
+}
