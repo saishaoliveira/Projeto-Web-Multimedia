@@ -10,6 +10,11 @@ body {
   background-color: rgba(255, 255, 255, 0.7) !important;
 }
 
+.nav-link {
+  color: black !important;
+  font-weight: bold;
+}
+
 /* Footer customizado */
 footer {
   background: linear-gradient(90deg, #e77320 0%, #e17948 100%);

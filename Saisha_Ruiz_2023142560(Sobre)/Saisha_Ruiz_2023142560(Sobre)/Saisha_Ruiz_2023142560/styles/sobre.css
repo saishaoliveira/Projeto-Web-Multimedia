@@ -1,3 +1,22 @@
+body {
+  background: url('../img/bg_site.jpg') ;
+}
+
+.hero-section {
+   background:
+  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../img/usaroute66.jpg') center/cover no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 800px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
 /* Imagens do carrossel com tamanho fixo */
 .carousel-img-fixed {
   height: 350px;
@@ -18,41 +37,9 @@
   z-index: 2;
 }
 
-/* Hero section custom background */
-.hero-section {
-  background: url("../img/usaroute66.jpg");
- background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 620px;
-  font-weight: bold;
-  text-align: center;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -80px;
-}
-
 .imghistoria {
   display: block;
   padding-bottom: 20px;
 
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(10deg);
-    }
-}
-
-.imghistoria:hover {
-   animation:rotate 3s ease-in-out infinite alternate;
-}
-
-.imghistoria:active {
-    animation-play-state: paused;
-}
