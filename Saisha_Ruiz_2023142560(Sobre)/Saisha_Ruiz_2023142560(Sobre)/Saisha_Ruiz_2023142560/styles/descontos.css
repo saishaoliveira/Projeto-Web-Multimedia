@@ -14,7 +14,7 @@ body {
 .hero-section {
   background:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('../img/banner_descontos.jpg') center/cover no-repeat;
+    url('../img/tour_banner.jpg') center/cover no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
