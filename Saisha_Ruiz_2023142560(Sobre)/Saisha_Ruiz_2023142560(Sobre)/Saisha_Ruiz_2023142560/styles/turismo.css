@@ -1,0 +1,96 @@
+body h1, h2, h3 {
+  font-family: 'Double Porter', sans-serif;
+}
+
+body {
+ background-color: #cacaca;
+}
+
+@font-face {
+  font-family: 'Double Porter';
+  src: url('../fonts/Double Porter P3.otf') format('opentype');
+}
+.hero-section {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../img/banner_descontos.jpg') center/cover no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 620px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -100px;
+}
+
+
+/* Card Styles for Experiences and Hotels */
+.card {
+  border-radius: 18px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07), 0 1.5px 4px 0 rgba(0,0,0,0.03);
+  border: none;
+  overflow: hidden;
+  background: #fff;
+}
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.card-body {
+  padding: 1.5rem 1.2rem;
+}
+
+.badge.bg-danger {
+  font-size: 0.9rem;
+  padding: 0.5em 1em;
+  border-radius: 12px;
+}
+
+/* City Grid Styles */
+.border.rounded-3.p-3 {
+  transition: box-shadow 0.2s;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
+}
+.border.rounded-3.p-3:hover {
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10);
+  background: #f7f7f7;
+}
+
+/* Section Headings */
+.container h2 {
+  font-family: 'Double Porter', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* City Card Hover Animation */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.card-link:hover .card {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 150px;
+  }
+  .hero-section {
+    height: 320px;
+    margin-top: 0;
+    padding: 30px 0;
+  }
+}

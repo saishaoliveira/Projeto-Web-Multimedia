@@ -1,0 +1,243 @@
+
+body h1, h2 {
+  font-family: 'Double Porter', sans-serif;
+}
+
+body {
+ background: #c9c9c9;
+}
+
+@font-face {
+  font-family: 'Double Porter';
+  src: url('../fonts/Double Porter P3.otf') format('opentype');
+}
+.hero-section {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../img/banner_descontos.jpg') center/cover no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 620px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -100px;
+}
+
+
+.descontos-sobre {
+  padding: 60px 30px;
+  text-align: left;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  background: #e4e4e4; ;
+  color: black;
+  padding: 60px 0 60px 0;
+  position: relative;
+
+}
+
+.descontos-sobre p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 20px;
+}
+.card-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+.parcerias-text h2 {
+  color: #252525;
+  font-weight: bold;
+}
+.card {
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07), 0 1.5px 4px 0 rgba(0,0,0,0.03);
+  background: #fff;
+  justify-content: center;
+}
+.card-body {
+  padding: 1.5rem 1.2rem;
+  padding: auto;
+ display: inline-block;
+}
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.card-text {
+  color: #444;
+  font-size: 1rem;
+}
+  .discount-card {
+    position: relative;
+    height: 520px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.13), 0 1.5px 4px 0 rgba(0,0,0,0.07);
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.discount-overlay {
+  width: 100%;
+  padding: 2.2rem 2rem 1.5rem 2rem;
+  background: linear-gradient(0deg, rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.15) 100%, rgba(0,0,0,0.01) 100%);
+  color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.discount-label {
+  font-size: 1rem;
+  color:#ff4e4e;
+  font-weight: bolder;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+}
+.discount-title {
+  font-family: 'Double Porter', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 0.2rem;
+  text-shadow: 1px 2px 8px rgba(0,0,0,0.25);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.discount-desc {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+}
+.discount-sub {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+  opacity: 0.9;
+}
+.discount-btn {
+  display: inline-block;
+  background: #ffffff;
+  color: #222;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.6em 1.6em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+  letter-spacing: 0.5px;
+}
+.discount-btn:hover {
+  background: linear-gradient(90deg, #e77320 0%, #e17948 100%);
+  color: #fff;
+}
+
+.contactar-section {
+  background: #e4e4e4; ;
+  color: black;
+  padding: 60px 0 60px 0;
+  text-align: center;
+  position: relative;
+}
+.contactar-badge {
+  position: absolute;
+  left: 60px;
+  top: -30px;
+  background:#ff4e4e;
+  color: #222;
+  padding: 12px 28px;
+  font-size: 1.5rem;
+  font-family: 'Double Porter', sans-serif;
+  transform: rotate(-4deg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 2;
+}
+.contactar-section h2 {
+  font-family: 'Double Porter', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.contactar-section p {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+.btn-contactar:hover {
+  background: linear-gradient(90deg, #e77320 0%, #e17948 100%);
+  color: #fff;
+}
+.btn-contactar {
+  display: inline-block;
+  background: #fff;
+  color: #222;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.6em 1.6em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
+  letter-spacing: 0.5px;
+}
+
+
+@media (max-width: 992px) {
+  .contactar-section {
+    padding: 40px 0 30px 0;
+  }
+  .contactar-badge {
+    left: 20px;
+    font-size: 1.1rem;
+    padding: 8px 18px;
+  }
+  .contactar-section h2 {
+    font-size: 1.4rem;
+  }
+   .discount-card {
+    height: 320px;
+  }
+  .discount-title {
+    font-size: 1.3rem;
+  }
+  .discount-overlay {
+    padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .discount-card {
+    height: 220px;
+  }
+  .discount-title {
+    font-size: 1rem;
+  }
+  .discount-desc {
+    font-size: 1rem;
+  }
+  .discount-overlay {
+    padding: 0.7rem 0.5rem 0.7rem 0.7rem;
+  }
+    .card-img-top {
+    max-height: 140px;
+  }
+  h2.text-center {
+    font-size: 1.5rem;
+  }
+  .card-body {
+    padding: 1rem 0.7rem;
+  }
+}
+
+
+
+

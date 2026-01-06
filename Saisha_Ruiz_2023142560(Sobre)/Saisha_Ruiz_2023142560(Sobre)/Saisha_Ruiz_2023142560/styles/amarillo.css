@@ -1,5 +1,5 @@
 body h1, h2{
-  font-family: 'Cedros', sans-serif;
+  font-family: 'Double Porter', sans-serif;
   color: #c33;
 }
 body {
@@ -24,14 +24,14 @@ body {
 }
 
 @font-face {
-  font-family: 'Cedros';
-  src: url('../fonts/Cedros.otf') format('opentype');
+  font-family: 'Double Porter';
+  src: url('../fonts/Double\ Porter\ P3.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 .titulo {
-  font-family:'Cedros', sans-serif;
+  font-family:'Double Porter', sans-serif;
   background: linear-gradient(to right,rgb(229, 215, 59), rgb(249, 64, 64));
   color: transparent;
   background-clip: text;
