@@ -13,19 +13,28 @@ const gameBoard = document.querySelector('.memory-game');
 let hasFlippedCard = false;
 let lockBoard = false; // Impede clicar em mais cartas enquanto a animação ocorre
 let firstCard, secondCard;
-let jogadas = document.getElementById('contador');
-const maximoJogadas = 15;
+const maximoJogadas = 10;
+
+// Contador de jogadas
+let numeroJogadas = 0; 
+const displayContador = document.getElementById('contador');
 
 // 1. Função para iniciar o jogo (Criar HTML e Embaralhar)
 function initGame() {
     // Embaralhar (Método simples usando sort randômico)
+
+    gameBoard.innerHTML = '';
     cards.sort(() => 0.5 - Math.random());
+
+    // Resetar variáveis
+    numeroJogadas = 0;
+    displayContador.innerHTML = `Jogadas: 0 / ${maximoJogadas}`;
 
     // Gerar o HTML das cartas
     cards.forEach(cardImg => {
         let cardElement = document.createElement('div');
-        let contador = document.getElementById('contador');
-        contador.innerHTML = `Jogadas: 0`;
+        // REMOVIDO: Declarações redundantes de 'contador' e 'jogadas' que estavam aqui
+
         cardElement.classList.add('memory-card');
         cardElement.dataset.card = cardImg; // ID da carta para comparação
 
@@ -53,7 +62,6 @@ function flipCard() {
 
     if (!hasFlippedCard) {
         // Primeiro clique
-        contador(jogadas);
         hasFlippedCard = true;
         firstCard = this;
         return;
@@ -65,25 +73,57 @@ function flipCard() {
 }
 
 // Contador de jogadas
-function contador(jogadas) {
-    jogadas++;
-    console.log(jogadas);
-    contador.innerHTML = `Jogadas: ${jogadas}`;
-    verificarFimDeJogo();
+function contador() { 
+    numeroJogadas++;
+    console.log(numeroJogadas);
+        displayContador.innerHTML = `Jogadas: ${numeroJogadas} / ${maximoJogadas}`;
+    // A verificação de fim de jogo será chamada dentro do fluxo do match
 }
 
+// Verificar fim de jogo
 function verificarFimDeJogo() {
-    if (jogadas >= maximoJogadas) {
-        alert('Fim de jogo! Você atingiu o número máximo de jogadas.');
+    if (numeroJogadas >= maximoJogadas) { 
+        // Bloqueia o tabuleiro para impedir novos cliques
+        lockBoard = true;
+
+        // Aguarda um pouco para finalizar a animação da última carta virada (800ms)
+        setTimeout(() => {
+            // Mostra todas as cartas (Frente)
+            revealAllCards();
+
+            // Aguarda o usuário visualizar as cartas reveladas (ex: 1 segundo) antes de perguntar
+            setTimeout(() => {
+                let jogarNovamente = confirm('Fim de jogo! Você atingiu o número máximo de jogadas.\n\nQuer jogar novamente?');
+                
+                if (jogarNovamente) {
+                    initGame();
+                }
+                // Se cancelar, o jogo permanece parado com as cartas à mostra
+            }, 1000);
+
+        }, 800);
     }
 }
 
 // 3. Checar se combinam
 function checkForMatch() {
+    // Incrementa jogada ao tentar um par
+    contador();
+
     // Acessa o data-card que definimos no HTML
     let isMatch = firstCard.dataset.card === secondCard.dataset.card;
 
-    isMatch ? disableCards() : unflipCards();
+    if (isMatch) {
+        disableCards();
+        // Verifica fim de jogo após acertar (caso queira limitar movimentos mesmo acertando)
+        verificarFimDeJogo();
+    } else {
+        unflipCards(); 
+        // Verifica fim de jogo após errar. Note: unflipCards tem delay de 1.5s, 
+        // mas verificarFimDeJogo tem seu próprio delay. 
+        // Se o jogo acabar, o reset global (unflipAllCards) vai sobrescrever o unflipCards parcial.
+        verificarFimDeJogo();
+    }
 }
 
 // 4. Desabilitar cartas (Match correto)
@@ -100,11 +140,35 @@ function unflipCards() {
     lockBoard = true; // Bloqueia o tabuleiro
 
     setTimeout(() => {
-        firstCard.classList.remove('flip');
-        secondCard.classList.remove('flip');
-
-        resetBoard();
+        // CORREÇÃO: Verifica se as cartas ainda existem/estão definidas antes de tentar remover a classe
+        if (firstCard && secondCard) {
+            firstCard.classList.remove('flip');
+            secondCard.classList.remove('flip');
+            resetBoard();
+        }
     }, 1500); // Espera 1.5s antes de desvirar
+}
+
+// Revelar todas as cartas
+function revealAllCards() {
+    const allCards = document.querySelectorAll('.memory-card');
+    allCards.forEach(card => {
+        card.classList.add('flip'); // Adiciona a classe que mostra a frente
+    });
+    // Reseta as variáveis para garantir que nenhuma função pendente (como unflipCards) desvire as cartas depois
+    resetBoard();
+}
+
+//Desvirar todas as cartas
+function unflipAllCards() {
+    // CORREÇÃO: Em vez de manipular classes manualmente, reiniciamos o jogo completamente.
+    // Isso garante que todas as cartas voltem ao estado inicial, embaralhadas e clicáveis.
+    
+    // Reseta as variáveis de controle
+    resetBoard();
+    
+    // Reinicia o visual e a lógica
+    initGame();
 }
 
 // 6. Reseta as variáveis de controle
