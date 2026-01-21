@@ -13,7 +13,10 @@ body {
 
 .nav-link {
   color: black !important;
-  font-weight: bold;
+  font-weight: bold !important;
+}
+.nav-link:hover {
+  color: #e77320 !important;
 }
 
 /* Footer customizado */

@@ -20,6 +20,72 @@ body {
   align-items: center;
 }
 
+
+.titulo {
+margin-top: 50px;
+  font-family:'Double Porter', sans-serif;
+  background: linear-gradient(to right,rgb(145, 136, 39), rgb(249, 64, 64));
+  color: transparent;
+  background-clip: text;
+  display: inline-block;
+  font-size: 48px;
+  font-weight: bold;
+  
+}
+
+.hero-section {
+  background:
+  linear-gradient(to right,rgb(226, 164, 7), rgb(230, 226, 7));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 420px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -100px;
+}
+
+#btn-recomecar {
+    /* ALTERADO: Posicionamento absoluto para o canto */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0; 
+    
+    padding: 10px; /* ALTERADO: Menos padding para botão de ícone */
+    width: 50px;   /* ADICIONADO: Largura fixa */
+    height: 50px;  /* ADICIONADO: Altura fixa */
+    display: flex; /* ADICIONADO: Flex para centralizar o SVG */
+    justify-content: center; /* ADICIONADO */
+    align-items: center;     /* ADICIONADO */
+    
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #e77320; 
+    border: none;
+    border-radius: 50%; /* ALTERADO: Totalmente redondo */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 10; 
+}
+#btn-recomecar img {
+    width: 25px;
+    height: 25px;
+    /* Se o SVG for preto, remova o comentário abaixo para torná-lo branco */
+    /* filter: brightness(0) invert(1); */
+}
+
+#btn-recomecar:hover {
+    background-color: #cf6216; /* Laranja mais escuro no hover */
+    transform: scale(1.05); /* Ligeiro aumento */
+}
+
 .memory-game {
     width: 1100px; /* Aumentado de 960px para 1100px para tornar as cartas maiores */
     max-width: 95%; /* Responsividade para ecrãs menores */
@@ -50,6 +116,7 @@ body {
 }
 
 #jogo-borda {
+    position: relative; /* ADICIONADO: Necessário para o botão absoluto funcionar */
     border: 5px solid black;
     width: fit-content;
     margin: 0 auto;
@@ -91,4 +158,57 @@ body {
     border: 3px solid #e77320;  /* Borda laranja */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave para dar profundidade */
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Telas médias (Tablets e Laptops pequenos - abaixo de 1150px) */
+/* Muda para 4 colunas */
+@media (max-width: 1150px) {
+    .memory-game {
+        max-width: 800px; /* Reduz a largura total do tabuleiro */
+    }
+
+    .memory-card {
+        /* 100% / 4 colunas = 25% */
+        width: calc(25% - 10px);
+    }
+}
+
+/* Telas pequenas (Mobile - abaixo de 768px) */
+/* Muda para 3 colunas */
+@media (max-width: 768px) {
+    #jogo-borda {
+        padding: 10px; /* Reduz padding da borda preta */
+        border-width: 3px;
+        width: 95%; /* Ocupa quase toda a largura */
+    }
+
+    .memory-game {
+        width: 100%;
+    }
+
+    .memory-card {
+        /* 100% / 3 colunas = 33.333% */
+        width: calc(33.333% - 10px);
+    }
+
+    #contador {
+        font-size: 1.2rem;
+        padding: 8px 15px;
+        min-width: 150px;
+    }
+}
+
+/* Telas muito pequenas (Abaixo de 400px) */
+/* Ajuste fino nas margens para caber melhor */
+@media (max-width: 400px) {
+    .memory-card {
+        margin: 3px;
+        width: calc(33.333% - 6px); /* Margem menor, cálculo ajustado */
+    }
+    
+    #jogo-borda {
+        padding: 5px;
+    }
 }

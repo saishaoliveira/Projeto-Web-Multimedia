@@ -19,6 +19,9 @@ const maximoJogadas = 10;
 let numeroJogadas = 0; 
 const displayContador = document.getElementById('contador');
 
+// Botão de recomeçar
+const btnRecomecar = document.getElementById('btn-recomecar'); 
+
 // 1. Função para iniciar o jogo (Criar HTML e Embaralhar)
 function initGame() {
     // Embaralhar (Método simples usando sort randômico)
@@ -48,6 +51,10 @@ function initGame() {
         gameBoard.appendChild(cardElement);
     });
 
+}
+
+if (btnRecomecar) {
+    btnRecomecar.addEventListener('click', unflipAllCards);
 }
 
 // 2. Lógica de Virar a Carta
