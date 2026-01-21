@@ -13,6 +13,8 @@ const gameBoard = document.querySelector('.memory-game');
 let hasFlippedCard = false;
 let lockBoard = false; // Impede clicar em mais cartas enquanto a animação ocorre
 let firstCard, secondCard;
+let jogadas = document.getElementById('contador');
+const maximoJogadas = 15;
 
 // 1. Função para iniciar o jogo (Criar HTML e Embaralhar)
 function initGame() {
@@ -22,6 +24,8 @@ function initGame() {
     // Gerar o HTML das cartas
     cards.forEach(cardImg => {
         let cardElement = document.createElement('div');
+        let contador = document.getElementById('contador');
+        contador.innerHTML = `Jogadas: 0`;
         cardElement.classList.add('memory-card');
         cardElement.dataset.card = cardImg; // ID da carta para comparação
 
@@ -34,6 +38,7 @@ function initGame() {
         cardElement.addEventListener('click', flipCard);
         gameBoard.appendChild(cardElement);
     });
+
 }
 
 // 2. Lógica de Virar a Carta
@@ -48,6 +53,7 @@ function flipCard() {
 
     if (!hasFlippedCard) {
         // Primeiro clique
+        contador(jogadas);
         hasFlippedCard = true;
         firstCard = this;
         return;
@@ -56,6 +62,20 @@ function flipCard() {
     // Segundo clique
     secondCard = this;
     checkForMatch();
+}
+
+// Contador de jogadas
+function contador(jogadas) {
+    jogadas++;
+    console.log(jogadas);
+    contador.innerHTML = `Jogadas: ${jogadas}`;
+    verificarFimDeJogo();
+}
+
+function verificarFimDeJogo() {
+    if (jogadas >= maximoJogadas) {
+        alert('Fim de jogo! Você atingiu o número máximo de jogadas.');
+    }
 }
 
 // 3. Checar se combinam
